@@ -15,7 +15,7 @@ EOF
 cat > /etc/supervisor/conf.d/mongodb.conf <<EOF
 [program:mongodb]
 directory=/
-command=/usr/bin/mongod --config /etc/mongodb.conf
+command=/usr/bin/mongod --config /etc/mongodb.conf --rest
 user=mongodb
 autostart=false
 autorestart=true
