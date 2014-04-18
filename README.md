@@ -48,9 +48,9 @@ mongo ${MONGODB_IP}
 You should mount a volume at /var/lib/mongodb.
 
 ```
-mkdir -p /opt/mongodb/data
+mkdir -p /opt/mongodb
 docker run -name mongodb -d \
-  -v /opt/mongodb/data:/var/lib/mongodb sameersbn/mongodb:latest
+  -v /opt/mongodb:/var/lib/mongodb sameersbn/mongodb:latest
 ```
 
 This will make sure that the data stored in the database is not lost when the image is stopped and started again.
