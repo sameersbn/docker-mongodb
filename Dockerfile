@@ -1,4 +1,4 @@
-FROM sameersbn/ubuntu:latest
+FROM sameersbn/ubuntu:20140310
 MAINTAINER sameer@damagehead.com
 
 # image specific
