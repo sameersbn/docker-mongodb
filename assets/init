@@ -9,6 +9,7 @@ echo User: root Password: $ROOT_PASSWORD
 
 # start supervisord
 /usr/bin/supervisord
+supervisorctl start sshd
 
 appStart () {
 	chown -R mongodb:mongodb /var/lib/mongodb
