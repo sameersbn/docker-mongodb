@@ -19,7 +19,7 @@ appStart () {
 	echo "Starting mongodb server..."
 	supervisorctl start mongodb >/dev/null
 
-	tail -F /var/log/mongodb/mongodb.log
+	tail -F /var/log/mongodb/mongod.log
 }
 
 appHelp () {

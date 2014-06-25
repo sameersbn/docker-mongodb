@@ -4,7 +4,7 @@ set -e
 cat > /etc/supervisor/conf.d/mongodb.conf <<EOF
 [program:mongodb]
 directory=/
-command=/usr/bin/mongod --config /etc/mongodb.conf --rest
+command=/usr/bin/mongod --config /etc/mongod.conf --rest
 user=mongodb
 autostart=false
 autorestart=true
@@ -12,4 +12,4 @@ stdout_logfile=/var/log/supervisor/%(program_name)s.log
 stderr_logfile=/var/log/supervisor/%(program_name)s_error.log
 EOF
 
-sed 's/bind_ip = 127.0.0.1/bind_ip = 0.0.0.0/' -i /etc/mongodb.conf
+sed 's/bind_ip = 127.0.0.1/bind_ip = 0.0.0.0/' -i /etc/mongod.conf
