@@ -9,11 +9,16 @@ echo User: root Password: $ROOT_PASSWORD
 
 # start supervisord
 /usr/bin/supervisord
-supervisorctl start sshd
+
+echo "Starting openssh server..."
+supervisorctl start sshd >/dev/null
 
 appStart () {
 	chown -R mongodb:mongodb /var/lib/mongodb
-	supervisorctl start mongodb
+
+	echo "Starting mongodb server..."
+	supervisorctl start mongodb >/dev/null
+
 	tail -F /var/log/mongodb/mongodb.log
 }
 
