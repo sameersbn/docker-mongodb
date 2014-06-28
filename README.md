@@ -6,7 +6,6 @@
     - [Data Store](#data-store)
     - [Securing the server](#securing-the-server)
     - [Allowing remote access](#allowing-remote-access)
-- [Maintenance](#maintenance)
 
 # Introduction
 Dockerfile to build a MongoDb container image which can be linked to other containers.
@@ -53,8 +52,6 @@ docker run -name mongodb -d \
 ```
 
 This will make sure that the data stored in the database is not lost when the image is stopped and started again.
-
-# Maintenance
 
 # Upgrading
 
