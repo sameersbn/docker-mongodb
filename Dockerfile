@@ -12,4 +12,4 @@ EXPOSE 27017
 EXPOSE 28017
 VOLUME ["/var/lib/mongodb"]
 CMD chown -R mongodb:mongodb /var/lib/mongodb && \
-		sudo -u mongodb -H /usr/bin/mongod --config /etc/mongod.conf --rest
+		sudo -u mongodb -H /usr/bin/mongod --config /etc/mongod.conf --httpinterface --rest
