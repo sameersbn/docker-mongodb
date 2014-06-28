@@ -5,11 +5,11 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
 		echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/mongodb.list && \
 		apt-get update && \
 		apt-get install -y mongodb-org-server && \
+		sed 's/bind_ip = 127.0.0.1/bind_ip = 0.0.0.0/' -i /etc/mongod.conf && \
 		apt-get clean # 20140418
 
 ADD assets/ /app/
-RUN chmod 755 /app/init /app/setup/install
-RUN /app/setup/install
+RUN chmod 755 /app/init
 
 EXPOSE 27017
 EXPOSE 28017
