@@ -6,6 +6,7 @@
     - [Data Store](#data-store)
     - [Securing the server](#securing-the-server)
     - [Allowing remote access](#allowing-remote-access)
+- [Upgrading](#upgrading)
 
 # Introduction
 Dockerfile to build a MongoDb container image which can be linked to other containers.
