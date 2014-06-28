@@ -8,9 +8,6 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
 		sed 's/bind_ip = 127.0.0.1/bind_ip = 0.0.0.0/' -i /etc/mongod.conf && \
 		apt-get clean # 20140418
 
-ADD assets/ /app/
-RUN chmod 755 /app/init
-
 EXPOSE 27017
 EXPOSE 28017
 
