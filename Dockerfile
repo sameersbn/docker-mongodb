@@ -10,8 +10,6 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
 
 EXPOSE 27017
 EXPOSE 28017
-
 VOLUME ["/var/lib/mongodb"]
-
 CMD chown -R mongodb:mongodb /var/lib/mongodb && \
 		sudo -u mongodb -H /usr/bin/mongod --config /etc/mongod.conf --rest
