@@ -16,5 +16,5 @@ EXPOSE 28017
 
 VOLUME ["/var/lib/mongodb"]
 
-ENTRYPOINT ["/app/init"]
-CMD ["app:start"]
+CMD chown -R mongodb:mongodb /var/lib/mongodb && \
+		sudo -u mongodb -H /usr/bin/mongod --config /etc/mongod.conf --rest
