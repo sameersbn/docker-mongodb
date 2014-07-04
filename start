@@ -2,4 +2,4 @@
 set -e
 
 chown -R mongodb:mongodb /var/lib/mongodb
-sudo -u mongodb -H /usr/bin/mongod --config /etc/mongod.conf --httpinterface --rest
+exec sudo -u mongodb -H /usr/bin/mongod --config /etc/mongod.conf --httpinterface --rest
