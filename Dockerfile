@@ -9,8 +9,10 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
 		sed 's/^bind_ip/#bind_ip/' -i /etc/mongod.conf && \
 		apt-get clean # 20140418
 
+ADD start /start
+RUN chmod 755 /start
+
 EXPOSE 27017
 EXPOSE 28017
 VOLUME ["/var/lib/mongodb"]
-CMD chown -R mongodb:mongodb /var/lib/mongodb && \
-		sudo -u mongodb -H /usr/bin/mongod --config /etc/mongod.conf --httpinterface --rest
+CMD ["/start"]
