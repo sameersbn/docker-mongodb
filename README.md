@@ -30,13 +30,12 @@ Run the mongodb image
 
 ```
 docker run -name mongodb -d sameersbn/mongodb:latest
-MONGODB_IP=$(docker inspect mongodb | grep IPAddres | awk -F'"' '{print $4}')
 ```
 
 To test if the mongodb server is configured properly, try connecting to the server.
 
 ```
-mongo ${MONGODB_IP}
+mongo $(docker inspect --format {{.NetworkSettings.IPAddress}} mongodb)
 ```
 
 # Configuration
