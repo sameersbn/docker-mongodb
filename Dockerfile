@@ -1,4 +1,4 @@
-FROM sameersbn/ubuntu:12.04.20140818
+FROM sameersbn/ubuntu:14.04.20140818
 MAINTAINER sameer@damagehead.com
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
