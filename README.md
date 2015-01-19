@@ -38,7 +38,7 @@ docker build -t="$USER/mongodb" .
 Run the mongodb image
 
 ```
-docker run -name mongodb -d sameersbn/mongodb:latest
+docker run --name mongodb -d sameersbn/mongodb:latest
 ```
 
 To test if the mongodb server is configured properly, try connecting to the server.
