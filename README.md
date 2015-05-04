@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/sameersbn/docker-mongodb.svg?style=svg)](https://circleci.com/gh/sameersbn/docker-mongodb)
+
 # Table of Contents
 - [Introduction](#introduction)
 - [Contributing](#contributing)

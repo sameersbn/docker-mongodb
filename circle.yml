@@ -1,0 +1,16 @@
+machine:
+  services:
+    - docker
+dependencies:
+  cache_directories:
+    - "~/docker-mongodb"
+  override:
+    - docker info
+    - if [[ -e ~/docker-mongodb/image.tar ]]; then docker load --input ~/docker-mongodb/image.tar; fi
+    - docker build -t sameersbn/mongodb .
+    - mkdir -p ~/docker-mongodb; docker save --output ~/docker-mongodb/image.tar sameersbn/mongodb
+test:
+  override:
+    - docker run -d -p 172.17.42.1:27017:27017 -p 172.17.42.1:28017:28017 sameersbn/mongodb; sleep 10
+    - nc -z 172.17.42.1 27017
+    - nc -z 172.17.42.1 28017
