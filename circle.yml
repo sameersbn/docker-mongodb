@@ -11,6 +11,5 @@ dependencies:
     - mkdir -p ~/docker-mongodb; docker save --output ~/docker-mongodb/image.tar sameersbn/mongodb
 test:
   override:
-    - docker run -d -p 27017:27017 -p 28017:28017 sameersbn/mongodb; sleep 10
-    - nc -z localhost 27017
-    - nc -z localhost 28017
+    - docker run -d -p 172.17.42.1:27017:27017 sameersbn/mongodb; sleep 10
+    - nc -z 172.17.42.1 27017
