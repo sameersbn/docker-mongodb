@@ -4,6 +4,8 @@ machine:
 dependencies:
   cache_directories:
     - "~/docker-mongodb"
+  pre:
+    - sudo apt-get update; sudo apt-get install mongodb-clients
   override:
     - docker info
     - if [[ -e ~/docker-mongodb/image.tar ]]; then docker load --input ~/docker-mongodb/image.tar; fi
