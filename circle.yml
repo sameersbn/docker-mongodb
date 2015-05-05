@@ -12,5 +12,5 @@ dependencies:
 test:
   override:
     - docker run -d -p 37017:27017 -p 38017:28017 sameersbn/mongodb; sleep 10
-    - nc -z 127.0.0.1 37017
-    - nc -z 127.0.0.1 38017
+    - mongo 127.0.0.1:37017/testdb --eval "db.stats()"
+    - curl --retry 10 --retry-delay 5 -v -s -L -o /dev/null http://127.0.0.1:38017
