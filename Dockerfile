@@ -1,4 +1,4 @@
-FROM sameersbn/ubuntu:14.04.20150504
+FROM sameersbn/ubuntu:14.04.20150603
 MAINTAINER sameer@damagehead.com
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10 \
@@ -6,7 +6,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10 \
  && apt-get update \
  && apt-get install -y mongodb-org-server \
  && sed 's/^bind_ip/#bind_ip/' -i /etc/mongod.conf \
- && rm -rf /var/lib/apt/lists/* # 20150504
+ && rm -rf /var/lib/apt/lists/* # 20150603
 
 ADD start /start
 RUN chmod 755 /start
