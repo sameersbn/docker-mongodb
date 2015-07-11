@@ -2,4 +2,4 @@
 set -e
 
 chown -R mongodb:mongodb /var/lib/mongodb
-exec gosu mongodb /usr/bin/mongod --config /etc/mongod.conf --httpinterface --rest
+exec start-stop-daemon --start --chuid mongodb:mongodb --exec /usr/bin/mongod -- --config /etc/mongod.conf --httpinterface --rest
