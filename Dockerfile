@@ -6,7 +6,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10 \
  && apt-get update \
  && apt-get install -y mongodb-org-server \
  && sed 's/^bind_ip/#bind_ip/' -i /etc/mongod.conf \
- && rm -rf /var/lib/apt/lists/* # 20150712
+ && rm -rf /var/lib/apt/lists/*
 
 ADD start /start
 RUN chmod 755 /start
