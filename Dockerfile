@@ -14,6 +14,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10 \
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
-EXPOSE 27017/tcp 28017/tcp
+EXPOSE 27017/tcp
 VOLUME ["/var/lib/mongodb"]
 ENTRYPOINT ["/sbin/entrypoint.sh"]
