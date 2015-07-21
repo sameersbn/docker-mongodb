@@ -16,5 +16,4 @@ RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 27017/tcp 28017/tcp
 VOLUME ["/var/lib/mongodb"]
-
-CMD ["/sbin/entrypoint.sh"]
+ENTRYPOINT ["/sbin/entrypoint.sh"]
