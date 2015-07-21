@@ -11,8 +11,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10 \
 ADD start /start
 RUN chmod 755 /start
 
-EXPOSE 27017
-EXPOSE 28017
+EXPOSE 27017/tcp 28017/tcp
 VOLUME ["/var/lib/mongodb"]
 
 CMD ["/start"]
