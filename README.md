@@ -9,6 +9,7 @@
   - [Installation](#installation)
   - [Quickstart](#quickstart)
   - [Persistence](#persistence)
+  - [Logs](#logs)
 - [Maintenance](#maintenance)
   - [Upgrading](#upgrading)
   - [Shell Access](#shell-access)
@@ -83,6 +84,14 @@ SELinux users should update the security context of the host mountpoint so that 
 ```bash
 mkdir -p /srv/docker/mongodb
 chcon -Rt svirt_sandbox_file_t /srv/docker/mongodb
+```
+
+## Logs
+
+To access the MongoDB logs, located at `/var/log/mongodb`, you can use `docker exec`. For example, if you want to tail the logs:
+
+```bash
+docker exec -it mongodb tail -f /var/log/mongodb/mongod.log
 ```
 
 # Maintenance
