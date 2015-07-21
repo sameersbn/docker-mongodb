@@ -17,6 +17,7 @@ fi
 
 # default behaviour is to launch mongod
 if [[ -z ${1} ]]; then
+  echo "Starting mongod..."
   exec start-stop-daemon --start --chuid ${MONGO_USER}:${MONGO_USER} \
     --exec $(which mongod) -- --config /etc/mongod.conf ${EXTRA_ARGS}
 else
