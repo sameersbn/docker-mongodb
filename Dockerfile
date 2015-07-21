@@ -8,10 +8,10 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10 \
  && sed 's/^bind_ip/#bind_ip/' -i /etc/mongod.conf \
  && rm -rf /var/lib/apt/lists/*
 
-COPY start /start
-RUN chmod 755 /start
+COPY entrypoint.sh /sbin/entrypoint.sh
+RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 27017/tcp 28017/tcp
 VOLUME ["/var/lib/mongodb"]
 
-CMD ["/start"]
+CMD ["/sbin/entrypoint.sh"]
