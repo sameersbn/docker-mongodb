@@ -16,5 +16,5 @@ COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 27017/tcp
-VOLUME ["/var/lib/mongodb"]
+VOLUME ["${MONGO_DATA_DIR}"]
 ENTRYPOINT ["/sbin/entrypoint.sh"]
