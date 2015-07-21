@@ -8,7 +8,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10 \
  && sed 's/^bind_ip/#bind_ip/' -i /etc/mongod.conf \
  && rm -rf /var/lib/apt/lists/*
 
-ADD start /start
+COPY start /start
 RUN chmod 755 /start
 
 EXPOSE 27017/tcp 28017/tcp
