@@ -8,6 +8,7 @@
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Quickstart](#quickstart)
+  - [Command-line arguments](#command-line-arguments)
   - [Persistence](#persistence)
   - [Logs](#logs)
 - [Maintenance](#maintenance)
@@ -71,7 +72,16 @@ docker run --name mongodb -d --restart=always \
 
 *Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
 
-> Any arguments specified on the `docker run` command are passed on the `mongod` command.
+## Command-line arguments
+
+You can customize the launch command of the MongoDB server by specifying arguments to `mongod` on the `docker run` command. For example the following command prints the help menu of `mongod` command:
+
+```bash
+docker run --name mongodb -it --rm \
+  --publish 27017:27017 \
+  --volume /srv/docker/mongodb:/var/lib/mongodb \
+  sameersbn/mongodb:latest --help
+```
 
 ## Persistence
 
