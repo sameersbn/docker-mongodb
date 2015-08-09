@@ -1,15 +1,20 @@
 #!/bin/bash
 set -e
 
-# create data dir
-mkdir -p ${MONGO_DATA_DIR}
-chmod -R 0755 ${MONGO_DATA_DIR}
-chown -R ${MONGO_USER}:${MONGO_USER} ${MONGO_DATA_DIR}
+create_data_dir() {
+  mkdir -p ${MONGO_DATA_DIR}
+  chmod -R 0755 ${MONGO_DATA_DIR}
+  chown -R ${MONGO_USER}:${MONGO_USER} ${MONGO_DATA_DIR}
+}
 
-# create log dir
-mkdir -p ${MONGO_LOG_DIR}
-chmod -R 0755 ${MONGO_LOG_DIR}
-chown -R ${MONGO_USER}:${MONGO_USER} ${MONGO_LOG_DIR}
+create_log_dir() {
+  mkdir -p ${MONGO_LOG_DIR}
+  chmod -R 0755 ${MONGO_LOG_DIR}
+  chown -R ${MONGO_USER}:${MONGO_USER} ${MONGO_LOG_DIR}
+}
+
+create_data_dir
+create_log_dir
 
 # allow arguments to be passed to mongod
 if [[ ${1:0:1} = '-' ]]; then
