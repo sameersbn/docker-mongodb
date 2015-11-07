@@ -1,6 +1,6 @@
 [![Circle CI](https://circleci.com/gh/sameersbn/docker-mongodb.svg?style=shield)](https://circleci.com/gh/sameersbn/docker-mongodb) [![Docker Repository on Quay.io](https://quay.io/repository/sameersbn/mongodb/status "Docker Repository on Quay.io")](https://quay.io/repository/sameersbn/mongodb)
 
-# quay.io/sameersbn/mongodb:latest
+# sameersbn/mongodb:latest
 
 - [Introduction](#introduction)
   - [Contributing](#contributing)
@@ -45,10 +45,12 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Quay.io](https://quay.io/repository/sameersbn/mongodb) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/sameersbn/mongodb) and is the recommended method of installation.
+
+> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/sameersbn/mongodb)
 
 ```bash
-docker pull quay.io/sameersbn/mongodb:latest
+docker pull sameersbn/mongodb:latest
 ```
 
 Alternatively you can build the image yourself.
@@ -67,7 +69,7 @@ Start MongoDB using:
 docker run --name mongodb -d --restart=always \
   --publish 27017:27017 \
   --volume /srv/docker/mongodb:/var/lib/mongodb \
-  quay.io/sameersbn/mongodb:latest
+  sameersbn/mongodb:latest
 ```
 
 *Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
@@ -80,7 +82,7 @@ You can customize the launch command of the MongoDB server by specifying argumen
 docker run --name mongodb -it --rm \
   --publish 27017:27017 \
   --volume /srv/docker/mongodb:/var/lib/mongodb \
-  quay.io/sameersbn/mongodb:latest --help
+  sameersbn/mongodb:latest --help
 ```
 
 ## Persistence
@@ -113,7 +115,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull quay.io/sameersbn/mongodb:latest
+  docker pull sameersbn/mongodb:latest
   ```
 
   2. Stop the currently running image:
@@ -133,7 +135,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name mongodb -d \
     [OPTIONS] \
-    quay.io/sameersbn/mongodb:latest
+    sameersbn/mongodb:latest
   ```
 
 ## Shell Access
