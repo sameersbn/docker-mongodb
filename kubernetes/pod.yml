@@ -11,3 +11,9 @@ spec:
       ports:
         - containerPort: 27017
           protocol: TCP
+      volumeMounts:
+        - mountPath: /var/lib/mongodb
+          name: data
+  volumes:
+    - name: data
+      emptyDir: {}
