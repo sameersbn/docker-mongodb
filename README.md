@@ -56,9 +56,7 @@ docker pull sameersbn/mongodb:latest
 Alternatively you can build the image yourself.
 
 ```bash
-git clone https://github.com/sameersbn/docker-mongodb.git
-cd docker-mongodb
-docker build --tag $USER/mongodb .
+docker build -t sameersbn/mongodb github.com/sameersbn/docker-mongodb
 ```
 
 ## Quickstart
