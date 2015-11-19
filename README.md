@@ -105,6 +105,17 @@ To access the MongoDB logs, located at `/var/log/mongodb`, you can use `docker e
 ```bash
 docker exec -it mongodb tail -f /var/log/mongodb/mongod.log
 ```
+## Host UID / GID Mapping
+Per default the container is configured to run mongdob as user and group `mongodb` with `uid` `102` and `gid` `65534`. The host possibly uses this ids for different purposes leading to unfavorable effects. From the host it appears as if the mounted data volumes are owned by the host's user `102 and group `65534`.
+
+Also the container processes seem to be executed as this host's user/group. The container can be configured to map the `uid` and `gid` of `mongodb` to different ids on host by passing the environment variables `USERMAP_UID` and `USERMAP_GID`. The following command maps the ids to user and group `mongodb` on the host.
+
+```bash
+docker run --name mongodb -it --rm [options] \
+    --env "USERMAP_UID=$(id -u mongodb)" --env "USERMAP_GID=$(id -g mongodb)" \
+    sameersbn/mongodb:latest
+```
+
 
 # Maintenance
 
