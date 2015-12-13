@@ -1,5 +1,9 @@
 [![Circle CI](https://circleci.com/gh/sameersbn/docker-mongodb.svg?style=shield)](https://circleci.com/gh/sameersbn/docker-mongodb) [![Docker Repository on Quay.io](https://quay.io/repository/sameersbn/mongodb/status "Docker Repository on Quay.io")](https://quay.io/repository/sameersbn/mongodb)
 
+> **NOTICE**:
+>
+> Active maintenance of the image has been halted. Your [contributions](#contributing) are welcome.
+
 # sameersbn/mongodb:latest
 
 - [Introduction](#introduction)
